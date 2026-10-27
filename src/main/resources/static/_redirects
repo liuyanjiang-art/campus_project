@@ -1,0 +1,9 @@
+# Cloudflare Pages 重写规则：解决单页应用（SPA）刷新 / 直达深层链接返回 404 的问题
+# 前端采用 hash 路由（#/mine），普通刷新本不会 404；
+# 但用户手动访问 /mine 这类无 hash 的路径时，Pages 找不到实体文件会返回 404，
+# 这里统一回退到 index.html，由前端路由自行解析。
+#
+# 注意：/api/* 与 /uploads/* 由 Pages Functions（functions 目录）接管；
+#       Functions 命中的请求不会应用本文件规则，因此不会被此规则误吞。
+
+/*    /index.html   200

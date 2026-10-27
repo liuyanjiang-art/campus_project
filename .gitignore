@@ -1,0 +1,14 @@
+.gradle/
+.gradle-home/
+build/
+.tools/
+*.iml
+.idea/
+out/
+# 运行期生成的本地数据（csv 存储），首次启动会自动生成种子数据
+# 注意必须带前导斜杠，否则会连 src/main/kotlin/.../data/ 源码目录一起忽略
+/data/
+# 本地误删文件的恢复备份
+.restore-backup/
+# 日志
+*.log
